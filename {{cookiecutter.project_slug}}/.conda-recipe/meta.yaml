@@ -1,0 +1,31 @@
+# source will be downloaded prior to filling in jinja templates
+# Example assumes that this folder has setup.py in it
+source:
+  git_url: ../
+
+package:
+  name: {{cookiecutter.project_slug}}
+{{ "{%" }} if GIT_DESCRIBE_NUMBER > '0' {{ "%}" }}
+  version: {{ "{{" }} GIT_DESCRIBE_TAG[1:] {{ "}}" }}.{{ "{{" }} GIT_DESCRIBE_NUMBER {{ "}}" }}
+{{ "{%" }} else {{ "%}" }}
+  version: {{ "{{" }} GIT_DESCRIBE_TAG[1:] {{ "}}" }}.0
+{{ "{%" }} endif {{ "%}" }}
+
+#requirements:
+  #build:
+    #- pip
+    #- python 2.7*
+
+  #run:
+    #- pip
+    #- python 2.7*
+
+test:
+  imports:
+    - {{cookiecutter.project_module_name}}
+
+about:
+  home: https://github.com/{{cookiecutter.github_username}}/{{cookiecutter.project_slug}}
+  {%- if cookiecutter.license %}
+  license: {{cookiecutter.license}}
+  {%- endif %}
