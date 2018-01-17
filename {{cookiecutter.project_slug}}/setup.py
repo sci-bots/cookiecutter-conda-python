@@ -19,12 +19,12 @@ import versioneer
 # See https://blog.ionelmc.ro/2014/06/25/python-packaging-pitfalls/
 setup(name='{{cookiecutter.project_slug}}',
       version=versioneer.get_version(),
-      cmdclass=versioneer.get_cmdclass()
+      cmdclass=versioneer.get_cmdclass(),
       description='{{cookiecutter.project_short_description}}',
       keywords='',
       author='{{cookiecutter.full_name}}',
       author_email='{{cookiecutter.email}}',
-      {-% if cookiecutter.project_url %}
+      {%- if cookiecutter.project_url %}
       url='{{cookiecutter.project_url }}',
       {% endif -%}
       license='{{cookiecutter.license}}',
