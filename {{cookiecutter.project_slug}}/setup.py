@@ -30,7 +30,7 @@ setup(name='{{cookiecutter.project_slug}}',
       license='{{cookiecutter.license}}',
       packages=find_packages('src'),
       package_dir={'': 'src'},
-      install_requires=['openpyxl'],
+      install_requires=[],
       py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
       # Install data listed in `MANIFEST.in`
       include_package_data=True)
