@@ -13,15 +13,14 @@ package:
   version: {{ "{{" }} GIT_VERSION {{ "}}" }}
 
 build:
+  noarch: python
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 #requirements:
   #build:
-    #- pip
     #- python 2.7*
 
   #run:
-    #- pip
     #- python 2.7*
 
 test:
